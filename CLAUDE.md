@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestones 1 (word list) and 2 (offline pipeline) are in progress. No application code exists yet. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list) is in progress: `data/words.json` holds the first 50 of 300 words. Milestone 2 (offline pipeline) has not started. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
@@ -27,6 +27,16 @@ web/                  Next.js app (milestone 3 onward)
 ```
 
 Folders are created when the milestone that needs them starts. Run commands are added here as each piece lands.
+
+## Word list
+
+`data/words.json` is a JSON list with one word per line. Each entry has `word`, `pos` (noun, verb, adjective, adverb), `definition` (plain English, must not use the word itself), `examples` (2–3 sentences that contain the word), `difficulty` (1 common, 2 medium, 3 hard) and `source` (`original`, or the openly licensed source it was adapted from).
+
+Check it after every edit (standard library only, no install needed):
+
+```bash
+python pipeline/validate_words.py
+```
 
 ## Working conventions
 
