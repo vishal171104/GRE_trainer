@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list) is in progress: `data/words.json` holds the first 50 of 300 words. Milestone 2 (offline pipeline) has not started. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list) is in progress: `data/words.json` holds 100 of 300 words. Milestone 2 (offline pipeline) has not started. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
@@ -30,7 +30,16 @@ Folders are created when the milestone that needs them starts. Run commands are 
 
 ## Word list
 
-`data/words.json` is a JSON list with one word per line. Each entry has `word`, `pos` (noun, verb, adjective, adverb), `definition` (plain English, must not use the word itself), `examples` (2–3 sentences that contain the word), `difficulty` (1 common, 2 medium, 3 hard) and `source` (`original`, or the openly licensed source it was adapted from).
+`data/words.json` is a JSON list with one word per line. Each entry has:
+
+- `word`: a single lowercase word.
+- `pos`: noun, verb, adjective or adverb.
+- `definition`: one line of 6–14 words in plain English, never using the word itself or a harder word.
+- `examples`: 2–3 sentences of 10–20 words that contain the word and make its meaning guessable from context.
+- `difficulty`: 1 newspaper-level, 2 educated but uncommon, 3 rare or easily confused. Both words of a look-alike pair get 3.
+- `source`: `original`, or the openly licensed source it was adapted from.
+
+New words follow the mix in `DECISIONS.md`: about 60% high-frequency words, 25% synonym families, 15% trap pairs. Definitions are AI-drafted; Vishal checks each against a real dictionary before launch.
 
 Check it after every edit (standard library only, no install needed):
 

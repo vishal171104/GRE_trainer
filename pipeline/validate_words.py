@@ -16,6 +16,8 @@ REQUIRED_FIELDS = ("word", "pos", "definition", "examples", "difficulty", "sourc
 ALLOWED_POS = {"noun", "verb", "adjective", "adverb"}
 ALLOWED_DIFFICULTY = {1, 2, 3}  # 1 = common, 2 = medium, 3 = hard
 MIN_EXAMPLES, MAX_EXAMPLES = 2, 3
+DEFINITION_WORDS = (6, 14)  # style rule: one plain-English line
+EXAMPLE_WORDS = (10, 20)  # long enough for context to hint at the meaning
 
 
 def stem(word: str) -> str:
@@ -44,8 +46,13 @@ def check_entry(entry: dict) -> list[str]:
         problems.append("source must say where the content came from")
 
     definition = entry["definition"]
-    if not isinstance(definition, str) or len(definition.split()) < 3:
-        problems.append("definition is too short")
+    if not isinstance(definition, str):
+        problems.append("definition must be text")
+    elif not DEFINITION_WORDS[0] <= len(definition.split()) <= DEFINITION_WORDS[1]:
+        problems.append(
+            f"definition has {len(definition.split())} words, expected "
+            f"{DEFINITION_WORDS[0]}-{DEFINITION_WORDS[1]}"
+        )
     elif stem(word) in definition.lower():
         problems.append("definition uses the word it is defining")
 
@@ -56,6 +63,11 @@ def check_entry(entry: dict) -> list[str]:
         for i, example in enumerate(examples, start=1):
             if not isinstance(example, str) or stem(word) not in example.lower():
                 problems.append(f"example {i} does not contain the word")
+            elif not EXAMPLE_WORDS[0] <= len(example.split()) <= EXAMPLE_WORDS[1]:
+                problems.append(
+                    f"example {i} has {len(example.split())} words, expected "
+                    f"{EXAMPLE_WORDS[0]}-{EXAMPLE_WORDS[1]}"
+                )
     return problems
 
 
