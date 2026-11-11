@@ -11,8 +11,8 @@ Milestones 1 (word list) and 2 (offline pipeline) are in progress. No applicatio
 - **Web app** (`web/`, from milestone 3): Next.js + TypeScript, deployed on Vercel. React Three Fiber for the galaxy, `ts-fsrs` for review timing.
 - **Database and auth**: Supabase — Postgres with pgvector, Google sign-in, row-level security on per-user tables.
 - **Offline pipeline** (`pipeline/`): Python. Embeds words, computes 3D positions, scores look-alike pairs, seeds the database. Runs on a laptop, not in production.
-- **Embeddings**: a larger open sentence-embedding model (768-dimension class); exact model still to be chosen.
-- **3D layout**: UMAP, t-SNE and PCA are compared; UMAP with cosine distance is the default.
+- **Embeddings**: `bge-base-en-v1.5` (main candidate, no query prefix), `all-mpnet-base-v2` and `all-MiniLM-L6-v2` (baseline) are compared on the 50-word synonym check; the winner is used.
+- **3D layout**: UMAP, t-SNE and PCA are compared by neighbour preservation with a fixed seed; UMAP with cosine distance is the default.
 
 ## Planned layout
 
@@ -20,6 +20,7 @@ Milestones 1 (word list) and 2 (offline pipeline) are in progress. No applicatio
 docs/PLAN.md          project plan (source of truth for scope)
 DECISIONS.md          decision log
 data/                 word list source files (words, definitions, examples)
+data/eval/            hand-checked evaluation keys (50-word synonym answer key)
 pipeline/             Python offline pipeline + its tests and outputs
 supabase/migrations/  SQL schema and RLS policies
 web/                  Next.js app (milestone 3 onward)
@@ -39,5 +40,6 @@ Folders are created when the milestone that needs them starts. Run commands are 
 
 - Definitions and example sentences are original or from openly licensed sources (e.g. WordNet) with attribution. Never copy commercial flashcard decks.
 - Say "for GRE preparation"; no ETS logo and no implied affiliation.
-- No secrets in the repo: Supabase keys go in untracked `.env` files.
+- The synonym answer key is written and committed before any embedding model is run. Never edit it after seeing model output.
+- No secrets in the repo: Supabase keys go in `.env` files, which are listed in `.gitignore`.
 - Log every answer to the `answers` table from day one; only quote metrics that come from real data.
