@@ -34,6 +34,7 @@ Folders are created when the milestone that needs them starts. Run commands are 
 - Decisions belong to Vishal. Lay out 2–3 options with trade-offs, let him choose, then record the choice in `DECISIONS.md`. Never fill in the "My reasoning" lines for him.
 - Explain each new file in 2–3 sentences when creating it.
 - Commit after every working step with a clear message.
+- Every push goes with a pull request: Claude pushes to its feature branch, opens (or updates) a PR into `main` and requests review from `vishal171104`. Vishal reviews and merges; Claude never merges or pushes to `main`.
 - After a milestone, offer to quiz Vishal on how the new code works.
 
 ## Content and legal rules
