@@ -38,3 +38,32 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **Trade-off accepted:** a bit more pipeline work in milestone 2 for a measured answer to "why UMAP?".
 - **Metric:** a neighbour-preservation score (how many of a word's nearest neighbours in the full embedding stay its neighbours in 3D), computed with a fixed random seed.
 - **My reasoning:** UMAP keeps synonym clusters almost as tight as t-SNE and can place new words into an existing map, so the galaxy stays stable when the list grows from 300 to 1,200. PCA blurs clusters together. I'll confirm with a neighbour-preservation score and a fixed seed.
+
+## 5. Word entry style
+
+- **Date:** 2026-11-11
+- **Chosen:**
+  - Definition: one line of about 6–14 words, in plain English, never using the word itself or a harder word. Good: "Castigate: to scold someone severely." Bad: "Castigate: to subject to castigation."
+  - Example sentences: about 10–20 words each, written so the meaning can be guessed from context. A sentence where any adjective would fit teaches nothing.
+  - Every definition is checked by me against a real dictionary (Merriam-Webster or Oxford Learner's) before launch.
+- **Enforced by:** `pipeline/validate_words.py` checks the word counts and that a definition doesn't use its own word. "No harder word" and "guessable from context" can only be checked by reading.
+- **My reasoning:** Accuracy is the biggest risk. The entries are drafted by an AI, and a wrong definition teaches every user the wrong meaning. Checking them is also GRE study for me.
+
+## 6. Difficulty bands
+
+- **Date:** 2026-11-11
+- **Chosen:**
+  - **1** — you'd see it in a newspaper (terse, lethargic).
+  - **2** — educated but uncommon (castigate, laconic).
+  - **3** — rare or easily confused (enervate, venial, sanguinary).
+- **How "easily confused" is applied:** both words of a look-alike pair with different meanings get band 3, even when one of them is common on its own (ingenious / ingenuous, aesthetic / ascetic).
+- **Later:** once real users answer questions, replace these guessed bands with measured error rates from the `answers` table.
+- **My reasoning:** Bands are only consistent if they follow a written rule.
+
+## 7. Mix of the remaining 250 words
+
+- **Date:** 2026-11-11
+- **Chosen:** roughly 60% words that appear often across GRE prep materials, 25% synonym families (the galaxy's clusters), 15% trap pairs (the app's special feature).
+- **Alternatives:** keep choosing only trap pairs and synonym families, as in the first 50.
+- **Word selection:** my own judgment, words met in official ETS practice questions, and comparing several published high-frequency lists to decide which words to include. Definitions and example sentences are never copied from those lists.
+- **My reasoning:** The GRE tests a broad mix, so the list shouldn't be only traps and families.
