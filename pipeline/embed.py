@@ -50,6 +50,8 @@ def load_words(path: Path = WORDS_PATH) -> list[dict]:
 
 def normalize(vectors: np.ndarray) -> np.ndarray:
     """Scale every row to length 1, so a dot product equals cosine similarity."""
+    if not np.isfinite(vectors).all():
+        raise ValueError("an embedding contains NaN or infinite values")
     norms = np.linalg.norm(vectors, axis=1, keepdims=True)
     if np.any(norms == 0):
         raise ValueError("an embedding came back as all zeros")

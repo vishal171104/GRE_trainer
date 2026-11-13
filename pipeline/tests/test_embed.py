@@ -59,3 +59,9 @@ def test_real_word_list_builds_a_text_for_every_word():
     texts = [embed.build_text(w) for w in words]
     assert len(texts) == len(words) == 300
     assert all(w["word"] in t for w, t in zip(words, texts))
+
+
+def test_normalize_rejects_nan_and_infinite_values():
+    for bad_value in (np.nan, np.inf):
+        with pytest.raises(ValueError, match="NaN"):
+            embed.normalize(np.array([[1.0, bad_value, 0.0]]))
