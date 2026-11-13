@@ -3,4 +3,4 @@ numpy>=1.26
 sentence-transformers>=3.0
 pytest>=8.0
 scikit-learn>=1.4
-umap-learn>=0.5
+umap-learn>=0.6

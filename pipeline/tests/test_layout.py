@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import embed  # noqa: E402
@@ -61,3 +62,14 @@ def test_positions_json_pairs_each_word_with_its_point():
     assert [row["word"] for row in rows] == ["a", "b", "c"]
     assert set(rows[0]) == {"word", "x", "y", "z"}
     assert max(abs(row[axis]) for row in rows for axis in "xyz") <= 1.0
+
+
+def test_run_all_rejects_a_layout_with_non_finite_positions(monkeypatch):
+    def broken_layout(vectors, seed):
+        positions = np.zeros((len(vectors), 3))
+        positions[0, 0] = np.nan
+        return positions
+
+    monkeypatch.setitem(layout.LAYOUTS, "pca", broken_layout)
+    with pytest.raises(ValueError, match="pca layout contains NaN"):
+        layout.run_all(VECTORS)
