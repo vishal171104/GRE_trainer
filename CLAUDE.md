@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Step 1 (`pipeline/embed.py`) is written; the real embeddings have not been generated yet. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`pipeline/embed.py`) and 2 (`pipeline/compare_models.py`) are written; the real embeddings have not been generated yet, so no model has been chosen. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
@@ -55,6 +55,7 @@ The cloud session cannot reach Hugging Face, so Claude tests with fake vectors a
 pip install -r pipeline/requirements.txt
 python -m pytest pipeline/tests      # fast, downloads nothing
 python pipeline/embed.py             # downloads three models, writes pipeline/output/
+python pipeline/compare_models.py    # scores each model against the synonym answer key
 ```
 
 ## Working conventions
