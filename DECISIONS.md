@@ -67,3 +67,24 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **Alternatives:** keep choosing only trap pairs and synonym families, as in the first 50.
 - **Word selection:** my own judgment, words met in official ETS practice questions, and comparing several published high-frequency lists to decide which words to include. Definitions and example sentences are never copied from those lists.
 - **My reasoning:** The GRE tests a broad mix, so the list shouldn't be only traps and families.
+
+## 8. Where the embedding models run — on my laptop
+
+- **Date:** 2026-11-13
+- **Chosen:** Claude writes the pipeline scripts and tests them in its cloud session with small fake vectors; I run the real models on my laptop and commit the output.
+- **Alternatives:** allow `huggingface.co` in the cloud environment's network settings so Claude runs the models there and commits the results.
+- **Trade-off accepted:** one extra manual step for me each time the pipeline changes, in exchange for seeing the results first-hand and matching the plan ("the pipeline runs on a laptop").
+- **My reasoning:** _TODO (Vishal) — chosen on Claude's recommendation_
+
+## 9. Where pipeline output goes — files in the repo first
+
+- **Date:** 2026-11-13
+- **Chosen:** vectors, 3D positions, trap candidates and a SQL seed file are written to `pipeline/output/` and committed. Nothing is written to Supabase until milestone 3.
+- **Alternatives:** write straight into Supabase from the pipeline, which needs the project and keys set up now.
+- **Trade-off accepted:** a few binary files of about 1 MB each in git, and a separate seeding step later.
+- **My reasoning:** _TODO (Vishal) — chosen on Claude's recommendation_
+
+## 10. Pipeline plan for milestone 2
+
+- **Date:** 2026-11-13
+- **Chosen:** five steps, one script and one pull request each: (1) embed, (2) compare models against the synonym key, (3) 3D layout comparison, (4) trap finder, (5) database schema and seed file.
