@@ -88,3 +88,11 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 
 - **Date:** 2026-11-13
 - **Chosen:** five steps, one script and one pull request each: (1) embed, (2) compare models against the synonym key, (3) 3D layout comparison, (4) trap finder, (5) database schema and seed file.
+
+## 11. Embedding model — pending your laptop results
+
+- **Date:** 2026-11-13
+- **First run (on my laptop, before validity checks were added):** mpnet 76.5% recall@5 (1.66 hits), bge-base 51.5% (1.10), minilm 39.6% (0.82).
+- **Not yet recorded as the decision:** that run printed numpy `RuntimeWarning`s (divide by zero, overflow, invalid value in matmul). Until the re-run with the new vector checks is clean and gives the same ranking, mpnet is a candidate winner, not a decision.
+- **Note:** bge-base was the main candidate going in, but ranked second. Choosing by measured synonym quality, as the reasoning in entry 3 says, means the measurement decides.
+- **My reasoning:** _TODO (Vishal)_

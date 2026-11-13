@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import compare_models  # noqa: E402
@@ -56,3 +57,24 @@ def test_real_answer_key_only_uses_words_from_the_word_list():
     for target, synonyms in key.items():
         assert target in words and target not in synonyms
         assert synonyms and set(synonyms) <= words
+
+
+def test_check_vectors_rejects_nan_and_infinite_values():
+    bad = GOOD.copy()
+    bad[2, 1] = np.nan
+    with pytest.raises(ValueError, match="NaN"):
+        compare_models.check_vectors(bad)
+    bad[2, 1] = np.inf
+    with pytest.raises(ValueError, match="NaN"):
+        compare_models.check_vectors(bad)
+
+
+def test_check_vectors_rejects_vectors_that_are_not_unit_length():
+    with pytest.raises(ValueError, match="length 1"):
+        compare_models.check_vectors(GOOD * 2)
+
+
+def test_check_vectors_returns_float64_without_changing_the_values():
+    checked = compare_models.check_vectors(GOOD)
+    assert checked.dtype == np.float64
+    assert np.allclose(checked, GOOD)

@@ -38,8 +38,25 @@ def nearest_neighbours(vectors: np.ndarray, order: list[str], word: str, k: int 
     return [order[i] for i in best]
 
 
+def check_vectors(vectors: np.ndarray, name: str = "embeddings") -> np.ndarray:
+    """Return the vectors as float64, or raise if they are not valid unit vectors.
+
+    float64 is used for the similarity maths because float32 matrix products
+    on some Macs raise spurious warnings. A real problem (NaN or infinite
+    values, vectors that are not length 1) must stop the run, not be scored.
+    """
+    vectors = np.asarray(vectors, dtype=np.float64)
+    if not np.isfinite(vectors).all():
+        raise ValueError(f"{name} contains NaN or infinite values")
+    norms = np.linalg.norm(vectors, axis=1)
+    if not np.allclose(norms, 1.0, atol=1e-3):
+        raise ValueError(f"{name} has vectors that are not length 1 (range {norms.min():.4f} to {norms.max():.4f})")
+    return vectors
+
+
 def score_model(vectors: np.ndarray, order: list[str], key: dict[str, list[str]], k: int = TOP_K) -> dict:
     """Score one model against the answer key."""
+    vectors = check_vectors(vectors)
     per_word = {}
     for target, synonyms in key.items():
         neighbours = nearest_neighbours(vectors, order, target, k)
@@ -82,7 +99,11 @@ def main() -> int:
         if vectors.shape[0] != len(order):
             print(f"{path.name} has {vectors.shape[0]} rows but word_order.json has {len(order)} words.")
             return 1
-        results[name] = score_model(vectors, order, key)
+        try:
+            results[name] = score_model(vectors, order, key)
+        except ValueError as error:
+            print(f"{path.name}: {error}. Re-run pipeline/embed.py for this model.")
+            return 1
 
     winner = pick_winner(results)
     print(f"{'model':<12}{'hits@5':>8}{'recall@5':>10}")
