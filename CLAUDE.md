@@ -4,14 +4,14 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`pipeline/embed.py`) and 2 (`pipeline/compare_models.py`) are written; the real embeddings have not been generated yet, so no model has been chosen. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`embed.py`) and 2 (`compare_models.py`) are done and the model is chosen: mpnet (`DECISIONS.md`, entry 11). Step 3 (`layout.py`) is written but not yet run on the real embeddings. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
 - **Web app** (`web/`, from milestone 3): Next.js + TypeScript, deployed on Vercel. React Three Fiber for the galaxy, `ts-fsrs` for review timing.
 - **Database and auth**: Supabase — Postgres with pgvector, Google sign-in, row-level security on per-user tables.
 - **Offline pipeline** (`pipeline/`): Python. Embeds words, computes 3D positions, scores look-alike pairs, seeds the database. Runs on a laptop, not in production.
-- **Embeddings**: `bge-base-en-v1.5` (main candidate, no query prefix), `all-mpnet-base-v2` and `all-MiniLM-L6-v2` (baseline) are compared on the 50-word synonym check; the winner is used.
+- **Embeddings**: `all-mpnet-base-v2` (chosen: 76.5% recall@5 on the synonym key, ahead of `bge-base-en-v1.5` 51.5% and `all-MiniLM-L6-v2` 39.6%).
 - **3D layout**: UMAP, t-SNE and PCA are compared by neighbour preservation with a fixed seed; UMAP with cosine distance is the default.
 
 ## Planned layout
@@ -56,6 +56,7 @@ pip install -r pipeline/requirements.txt
 python -m pytest pipeline/tests      # fast, downloads nothing
 python pipeline/embed.py             # downloads three models, writes pipeline/output/
 python pipeline/compare_models.py    # scores each model against the synonym answer key
+python pipeline/layout.py            # UMAP / t-SNE / PCA comparison, writes positions.json
 ```
 
 ## Working conventions
