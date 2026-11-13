@@ -89,10 +89,19 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **Date:** 2026-11-13
 - **Chosen:** five steps, one script and one pull request each: (1) embed, (2) compare models against the synonym key, (3) 3D layout comparison, (4) trap finder, (5) database schema and seed file.
 
-## 11. Embedding model — pending your laptop results
+## 11. Embedding model — mpnet (`all-mpnet-base-v2`)
 
 - **Date:** 2026-11-13
-- **First run (on my laptop, before validity checks were added):** mpnet 76.5% recall@5 (1.66 hits), bge-base 51.5% (1.10), minilm 39.6% (0.82).
-- **Not yet recorded as the decision:** that run printed numpy `RuntimeWarning`s (divide by zero, overflow, invalid value in matmul). Until the re-run with the new vector checks is clean and gives the same ranking, mpnet is a candidate winner, not a decision.
-- **Note:** bge-base was the main candidate going in, but ranked second. Choosing by measured synonym quality, as the reasoning in entry 3 says, means the measurement decides.
+- **Chosen:** `sentence-transformers/all-mpnet-base-v2`, 768 dimensions.
+- **Measured on the frozen 50-word synonym answer key** (5 nearest neighbours per word, run on my laptop):
+
+  | Model | hits@5 | recall@5 |
+  | --- | --- | --- |
+  | mpnet | 1.66 | 76.5% |
+  | bge-base-en-v1.5 | 1.10 | 51.5% |
+  | all-MiniLM-L6-v2 (baseline) | 0.82 | 39.6% |
+
+- **Why the result can be trusted:** the first run printed numpy `RuntimeWarning`s. Checks added afterwards confirmed every vector is finite and unit length, and after the similarity maths was rewritten without numpy's matrix product the warnings disappeared and the table was identical. The warnings were a numpy-on-Mac quirk, not bad data.
+- **Surprise worth remembering:** bge-base was the main candidate going in, but ranked second. The answer key was frozen before any model was run, so it did not favour either.
+- **Caveat:** 50 targets and 111 synonym links is a small sample, and the key is one person's judgment. The gap between mpnet and the others is large, but differences of a few points would not be meaningful.
 - **My reasoning:** _TODO (Vishal)_
