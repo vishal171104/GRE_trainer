@@ -78,3 +78,18 @@ def test_check_vectors_returns_float64_without_changing_the_values():
     checked = compare_models.check_vectors(GOOD)
     assert checked.dtype == np.float64
     assert np.allclose(checked, GOOD)
+
+
+def test_similarity_matches_a_plain_matrix_product():
+    rng = np.random.default_rng(0)
+    vectors = embed.normalize(rng.normal(size=(40, 16)).astype(np.float32))
+    for index in (0, 7, 39):
+        expected = vectors @ vectors[index]
+        assert np.allclose(np.einsum("ij,j->i", vectors, vectors[index]), expected, atol=1e-6)
+
+
+def test_nearest_neighbours_raises_on_non_finite_similarity():
+    bad = GOOD.copy()
+    bad[3, 0] = np.nan
+    with pytest.raises(ValueError, match="NaN"):
+        compare_models.nearest_neighbours(bad, ORDER, "happy")

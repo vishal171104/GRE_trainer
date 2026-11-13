@@ -30,9 +30,15 @@ def nearest_neighbours(vectors: np.ndarray, order: list[str], word: str, k: int 
     """The k words most similar to `word`, most similar first, excluding itself.
 
     Vectors are unit length, so the dot product is the cosine similarity.
+    The product is written with einsum, not `@`: on some Macs numpy's matrix
+    product (Apple's Accelerate library) raises spurious divide-by-zero and
+    overflow warnings even when the numbers are fine. A genuinely corrupt
+    result is still caught by the finiteness check below.
     """
     index = order.index(word)
-    similarity = vectors @ vectors[index]
+    similarity = np.einsum("ij,j->i", vectors, vectors[index])
+    if not np.isfinite(similarity).all():
+        raise ValueError(f"similarity scores for '{word}' contain NaN or infinite values")
     similarity[index] = -np.inf  # a word is not its own neighbour
     best = np.argsort(-similarity, kind="stable")[:k]
     return [order[i] for i in best]
