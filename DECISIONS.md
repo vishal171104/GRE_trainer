@@ -117,3 +117,18 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **Surprise worth remembering:** bge-base was the main candidate going in, but ranked second. The answer key was frozen before any model was run, so it did not favour either.
 - **Caveat:** 50 targets and 111 synonym links is a small sample, and the key is one person's judgment. The gap between mpnet and the others is large, but differences of a few points would not be meaningful.
 - **My reasoning:** _TODO (Vishal)_
+
+## 12. How trap candidates are found and ranked
+
+- **Date:** 2026-11-13
+- **Status:** Claude's proposal, built so there is something concrete to react to. Not yet confirmed by Vishal; confirm or change it after reading the first real candidate list.
+- **Proposed:**
+  - Spelling score: the larger of edit similarity (1 minus edits over the longer word's length) and the shared-prefix share of the longer word.
+  - Sound score: edit similarity of the two words' Metaphone codes.
+  - Meaning score: cosine similarity of the mpnet embeddings.
+  - Rank by `max(spelling, sound) * (1 - meaning)`, after dropping pairs below 0.6 on both spelling and sound. Top 100 go to hand review.
+- **Alternatives:** a hard cutoff on meaning (drop every pair above some similarity) instead of ranking softly, which needs a threshold that cannot be tuned before real embeddings exist; Jaro-Winkler for spelling, which weights prefixes in a different way.
+- **Departure from the plan:** the plan names Double Metaphone. Both releases of the `metaphone` package fail to build with current Python build tools, so the script uses the plain Metaphone code from `jellyfish`, which installs cleanly. Metaphone is the older, simpler version of the same idea and misses some alternate pronunciations.
+- **What is known before the real run (spelling and sound only, no meaning):** of 34 pairs in `data/eval/expected_traps.json`, which Claude wrote before building the finder, 26 are in the top 100 of 44,850 pairs, 29 in the top 200 and 32 in the top 500. The two clearly missed are ambiguous / ambivalent and adulation / adulterate, which share only a stem. This is a smoke test: Claude chose the pairs and the finder was built knowing them, so it says nothing about precision.
+- **Evaluation still to do:** the plan's trap-finder precision, meaning how many of the top 100 Vishal would accept as real traps, is measured from his `accept` column.
+- **My reasoning:** _TODO (Vishal)_

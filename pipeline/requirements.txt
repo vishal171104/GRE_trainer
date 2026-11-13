@@ -4,3 +4,4 @@ sentence-transformers>=3.0
 pytest>=8.0
 scikit-learn>=1.4
 umap-learn>=0.6
+jellyfish>=1.0
