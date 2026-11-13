@@ -1,0 +1,4 @@
+# Offline pipeline dependencies. Install with: pip install -r pipeline/requirements.txt
+numpy>=1.26
+sentence-transformers>=3.0
+pytest>=8.0

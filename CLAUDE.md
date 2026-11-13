@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline): the draft synonym answer key is in `data/eval/synonym_key.json`; pipeline code waits on Vishal's approval of the plan. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Step 1 (`pipeline/embed.py`) is written; the real embeddings have not been generated yet. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
@@ -45,6 +45,16 @@ Check it after every edit (standard library only, no install needed):
 
 ```bash
 python pipeline/validate_words.py
+```
+
+## Offline pipeline
+
+The cloud session cannot reach Hugging Face, so Claude tests with fake vectors and Vishal runs the real models on his laptop, then commits `pipeline/output/`.
+
+```bash
+pip install -r pipeline/requirements.txt
+python -m pytest pipeline/tests      # fast, downloads nothing
+python pipeline/embed.py             # downloads three models, writes pipeline/output/
 ```
 
 ## Working conventions
