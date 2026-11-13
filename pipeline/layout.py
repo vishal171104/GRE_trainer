@@ -69,8 +69,16 @@ def layout_tsne(vectors: np.ndarray, seed: int = SEED) -> np.ndarray:
 def layout_umap(vectors: np.ndarray, seed: int = SEED) -> np.ndarray:
     import umap
 
+    # compatibility_layout=True keeps the long-standing UMAP pipeline, so results
+    # stay the same when umap-learn changes its default in a later release.
     return umap.UMAP(
-        n_components=3, metric="cosine", n_neighbors=15, min_dist=0.1, random_state=seed, n_jobs=1
+        n_components=3,
+        metric="cosine",
+        n_neighbors=15,
+        min_dist=0.1,
+        random_state=seed,
+        n_jobs=1,
+        compatibility_layout=True,
     ).fit_transform(vectors)
 
 
@@ -87,7 +95,17 @@ def run_all(vectors: np.ndarray, seed: int = SEED) -> dict[str, dict]:
     """Lay out the vectors with every method and score each one."""
     results = {}
     for name in METHODS:
-        positions = np.asarray(LAYOUTS[name](vectors, seed), dtype=np.float64)
+        # On some Macs numpy's matrix product (Apple's Accelerate library) raises
+        # spurious divide-by-zero / overflow / invalid-value flags inside
+        # scikit-learn, which we cannot change (see compare_models.py). Hiding
+        # them is safe only because the output is checked below: the positions
+        # must be finite, and the preservation score is computed independently
+        # from the original vectors, so a broken layout would score near the
+        # random baseline.
+        with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
+            positions = np.asarray(LAYOUTS[name](vectors, seed), dtype=np.float64)
+        if not np.isfinite(positions).all():
+            raise ValueError(f"the {name} layout contains NaN or infinite values")
         results[name] = {
             "positions": positions,
             "preservation": neighbour_preservation(vectors, positions),

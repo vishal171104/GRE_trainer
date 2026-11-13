@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`embed.py`) and 2 (`compare_models.py`) are done and the model is chosen: mpnet (`DECISIONS.md`, entry 11). Step 3 (`layout.py`) is written but not yet run on the real embeddings. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`embed.py`) and 2 (`compare_models.py`) are done and the model is chosen: mpnet (`DECISIONS.md`, entry 11). Step 3 (`layout.py`) has been run: neighbour preservation UMAP 0.449, t-SNE 0.460, PCA 0.185, and UMAP is kept (`DECISIONS.md`, entry 4). Next is step 4, the trap finder, once `pipeline/output` is committed to the repo. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
 
 ## Stack
 

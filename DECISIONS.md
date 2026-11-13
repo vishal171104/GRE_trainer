@@ -37,6 +37,18 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **Alternatives:** UMAP only (less work, no evidence for the choice); PCA only (deterministic and simple, but clusters smear together in 3 linear components).
 - **Trade-off accepted:** a bit more pipeline work in milestone 2 for a measured answer to "why UMAP?".
 - **Metric:** a neighbour-preservation score (how many of a word's nearest neighbours in the full embedding stay its neighbours in 3D), computed with a fixed random seed.
+- **Result (2026-11-13, mpnet embeddings, k=10, seed 42, run on my laptop):**
+
+  | Method | Neighbour preservation |
+  | --- | --- |
+  | t-SNE | 0.460 |
+  | UMAP | 0.449 |
+  | PCA | 0.185 |
+  | random baseline | 0.033 |
+
+- **What it shows:** UMAP is within 0.011 of t-SNE, which is "almost as tight", and PCA keeps under half as many neighbourhoods, which is why it blurs clusters. UMAP stays the default, for the reason below: it can place new words into an existing map, so the galaxy stays stable when the list grows from 300 to 1,200. t-SNE cannot.
+- **Not measured:** how much each score moves with a different random seed. The 0.011 gap between t-SNE and UMAP is small enough that another seed could reorder them, so it should not be quoted as UMAP being better or worse.
+- **Warnings:** the run printed numpy matmul warnings from inside scikit-learn, the same Mac quirk as in entry 11. The layouts are checked for NaN and infinite values, and the scores are computed independently from the original vectors, so a broken layout would score near the 0.033 baseline.
 - **My reasoning:** UMAP keeps synonym clusters almost as tight as t-SNE and can place new words into an existing map, so the galaxy stays stable when the list grows from 300 to 1,200. PCA blurs clusters together. I'll confirm with a neighbour-preservation score and a fixed seed.
 
 ## 5. Word entry style
