@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) has not started. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline): the draft synonym answer key is in `data/eval/synonym_key.json`; pipeline code waits on Vishal's approval of the plan. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
