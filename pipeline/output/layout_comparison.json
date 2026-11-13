@@ -1,0 +1,12 @@
+{
+  "model": "mpnet",
+  "seed": 42,
+  "neighbours": 10,
+  "random_baseline": 0.033444816053511704,
+  "used_for_positions": "umap",
+  "preservation": {
+    "umap": 0.44866666666666666,
+    "tsne": 0.46,
+    "pca": 0.18533333333333335
+  }
+}
