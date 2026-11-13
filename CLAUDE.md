@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list) is in progress: `data/words.json` holds 250 of 300 words. Milestone 2 (offline pipeline) has not started. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) has not started. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
