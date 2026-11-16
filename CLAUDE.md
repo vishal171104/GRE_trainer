@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`embed.py`) and 2 (`compare_models.py`) are done and the model is chosen: mpnet (`DECISIONS.md`, entry 11). Step 3 (`layout.py`) has been run: neighbour preservation UMAP 0.449, t-SNE 0.460, PCA 0.185, and UMAP is kept (`DECISIONS.md`, entry 4). Step 4 (`find_traps.py`) has been run on the real embeddings: `pipeline/output/trap_candidates.csv` holds the top 100 for Vishal's hand review. Meaning no longer affects the ranking by default (`DECISIONS.md`, entry 12), and an experiment on whether spelling leaks into the embeddings is set up but not run (entry 13). The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`embed.py`) and 2 (`compare_models.py`) are done and the model is chosen: mpnet (`DECISIONS.md`, entry 11). Step 3 (`layout.py`) has been run: neighbour preservation UMAP 0.449, t-SNE 0.460, PCA 0.185, and UMAP is kept (`DECISIONS.md`, entry 4). Step 4 (`find_traps.py`) has been run on the real embeddings: `pipeline/output/trap_candidates.csv` holds the top 100 for Vishal's hand review. Meaning no longer affects the ranking by default (`DECISIONS.md`, entry 12), and an experiment on whether spelling leaks into the embeddings is set up but not run (entry 13). Step 5 is written: `supabase/migrations/0001_initial_schema.sql` and `pipeline/build_seed.py`, which writes `supabase/seed.sql` (not committed until the trap review is done). The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
@@ -59,6 +59,13 @@ python pipeline/embed.py --models mpnet --text definition masked   # spelling-le
 python pipeline/compare_models.py    # scores each model against the synonym answer key
 python pipeline/layout.py            # UMAP / t-SNE / PCA comparison, writes positions.json
 python pipeline/find_traps.py        # ranks look-alike candidates; refuses to overwrite a reviewed CSV
+python pipeline/build_seed.py        # writes supabase/seed.sql: all words + accepted trap pairs
+```
+
+Database tests need a Postgres server with pgvector; they are skipped otherwise. They create and drop their own database:
+
+```bash
+WORDORBIT_TEST_DATABASE_URL=postgresql:///postgres python -m pytest pipeline/tests
 ```
 
 ## Working conventions

@@ -151,3 +151,17 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **Risk to watch:** choosing among several variants on the same 50-word key slightly overfits to that key. Only a clear gap should change the choice of embedding text.
 - **My reasoning:** _TODO (Vishal)_
 
+## 14. Database schema (v1)
+
+- **Date:** 2026-11-16
+- **Status:** Claude's proposal, following the six tables in the plan. Confirm or change before milestone 3 creates the real Supabase project.
+- **Choices worth checking:**
+  - **Content is public.** `words`, `word_pairs` and `questions` are readable by signed-out visitors, so the galaxy can be browsed before sign-in. Only the seed (service role) can write them.
+  - **Answers are append-only for users.** Users can add and read their own answers but cannot change or delete them, so the log behind every metric cannot be edited after the fact. Deleting a user account still deletes their answers.
+  - **`is_correct` is computed by the database** from the chosen and correct word, so it can never disagree with them.
+  - **Trap pairs are stored once per pair**, whichever order the two words come in, enforced by a unique index.
+  - **No vector index.** At 300 words a full scan is instant; add one (HNSW) if the list grows past a few thousand.
+  - **FSRS fields use ts-fsrs's names**, so the app can save a card without translating field names.
+- **How it is checked:** `pipeline/tests/test_database.py` applies the migration and seed to a throwaway Postgres database with Supabase's `auth` schema stubbed, then acts as two users and a signed-out visitor. Switching off row-level security on `answers` makes exactly the two answer tests fail, so the tests do test the protection. The stub is not Supabase itself, so the policies should be checked once more in the real project.
+- **My reasoning:** _TODO (Vishal)_
+
