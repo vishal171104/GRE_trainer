@@ -86,6 +86,7 @@ npm run lint && npx tsc --noEmit && npm run build
 - Commit after every working step with a clear message.
 - Every push goes with a pull request: Claude pushes to its feature branch, opens (or updates) a PR into `main` and requests review from `vishal171104`. Vishal reviews and merges; Claude never merges or pushes to `main`. After opening a PR, Claude subscribes to its activity without asking, to respond to review comments and fix CI failures.
 - After a milestone, offer to quiz Vishal on how the new code works.
+- Credit: commits are authored as Vishal (`vishal171104 <154308142+vishal171104@users.noreply.github.com>`, set with `git config` in the repo). Do not add Co-Authored-By, Claude-Session or "Generated with Claude Code" lines to commit messages or PR descriptions.
 
 ## Content and legal rules
 
