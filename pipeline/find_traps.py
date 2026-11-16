@@ -9,9 +9,15 @@ A trap is a pair of words that look or sound alike but mean different things
   sound     edit similarity of the two words' Metaphone codes
   meaning   cosine similarity of the embeddings (from step 1)
 
-and ranks pairs by  trap_score = max(spelling, sound) * (1 - meaning),
-which is high when a pair looks or sounds alike but means something different.
-Pairs below --min-lookalike on both spelling and sound are dropped first.
+and ranks pairs by  trap_score = lookalike * (1 - weight * meaning),  where
+lookalike = max(spelling, sound). Pairs below --min-lookalike are dropped first.
+
+The meaning weight defaults to 0, so by default meaning is shown for the
+reviewer but does not change the ranking. On the first real run, true traps
+were MORE similar in meaning than average pairs (many share a root, and the
+embedded text contains the word itself), so penalising similarity pushed them
+down: 5 of 34 known traps in the top 100, against 25 with weight 0. See
+DECISIONS.md, entries 12 and 13. Try --meaning-weight 1 to see the effect.
 
 Output, for hand review (Vishal fills in the `accept` column):
   pipeline/output/trap_candidates.csv
@@ -65,9 +71,9 @@ def phonetic_code(word: str) -> str:
     return jellyfish.metaphone(word)
 
 
-def trap_score(lookalike: float, meaning: float) -> float:
-    """High for pairs that look or sound alike but are not related in meaning."""
-    return lookalike * (1.0 - max(meaning, 0.0))
+def trap_score(lookalike: float, meaning: float, meaning_weight: float = 0.0) -> float:
+    """The look-alike score, lowered for pairs that are close in meaning when the weight is above 0."""
+    return lookalike * (1.0 - meaning_weight * max(meaning, 0.0))
 
 
 def meaning_matrix(vectors: np.ndarray) -> np.ndarray:
@@ -75,7 +81,7 @@ def meaning_matrix(vectors: np.ndarray) -> np.ndarray:
     return np.einsum("ik,jk->ij", vectors, vectors)
 
 
-def score_pairs(words: list[str], vectors: np.ndarray | None = None) -> list[dict]:
+def score_pairs(words: list[str], vectors: np.ndarray | None = None, meaning_weight: float = 0.0) -> list[dict]:
     """Score every pair of words. Without vectors the meaning is left out (None)."""
     codes = [phonetic_code(w) for w in words]
     meanings = meaning_matrix(vectors) if vectors is not None else None
@@ -93,7 +99,7 @@ def score_pairs(words: list[str], vectors: np.ndarray | None = None) -> list[dic
                 "sound": sound,
                 "lookalike": lookalike,
                 "meaning": meaning,
-                "trap_score": trap_score(lookalike, meaning) if meaning is not None else lookalike,
+                "trap_score": trap_score(lookalike, meaning, meaning_weight) if meaning is not None else lookalike,
             }
         )
     return rows
@@ -112,6 +118,14 @@ def expected_coverage(candidates: list[dict], expected: list[list[str]]) -> tupl
     found = [p for p in expected if frozenset(p) in present]
     missing = [p for p in expected if frozenset(p) not in present]
     return found, missing
+
+
+def has_reviews(csv_path: Path) -> bool:
+    """True if the CSV already has anything in its `accept` column, i.e. someone has reviewed it."""
+    if not csv_path.exists():
+        return False
+    with csv_path.open(newline="", encoding="utf-8") as handle:
+        return any((row.get("accept") or "").strip() for row in csv.DictReader(handle))
 
 
 def write_outputs(candidates: list[dict], output_dir: Path = OUTPUT_DIR) -> tuple[Path, Path]:
@@ -146,6 +160,8 @@ def main() -> int:
     parser.add_argument("--model", default="mpnet", help="which model's embeddings give the meaning score")
     parser.add_argument("--top", type=int, default=DEFAULT_TOP)
     parser.add_argument("--min-lookalike", type=float, default=DEFAULT_MIN_LOOKALIKE)
+    parser.add_argument("--meaning-weight", type=float, default=0.0, help="0 ignores meaning in the ranking; 1 penalises it fully")
+    parser.add_argument("--overwrite", action="store_true", help="replace a CSV that already has accept marks")
     args = parser.parse_args()
 
     words = [entry["word"] for entry in json.loads(WORDS_PATH.read_text(encoding="utf-8"))]
@@ -158,8 +174,14 @@ def main() -> int:
         print("word_order.json does not match data/words.json. Re-run: python pipeline/embed.py")
         return 1
 
+    csv_path = OUTPUT_DIR / "trap_candidates.csv"
+    if has_reviews(csv_path) and not args.overwrite:
+        print(f"{csv_path.relative_to(ROOT)} already has accept marks. Re-running would erase them.")
+        print("Copy it somewhere safe and pass --overwrite if you really want a fresh list.")
+        return 1
+
     vectors = np.load(vectors_path).astype(np.float64)
-    rows = score_pairs(words, vectors)
+    rows = score_pairs(words, vectors, args.meaning_weight)
     candidates = select_candidates(rows, args.top, args.min_lookalike)
     csv_path, _ = write_outputs(candidates)
 

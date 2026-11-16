@@ -131,4 +131,23 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **Departure from the plan:** the plan names Double Metaphone. Both releases of the `metaphone` package fail to build with current Python build tools, so the script uses the plain Metaphone code from `jellyfish`, which installs cleanly. Metaphone is the older, simpler version of the same idea and misses some alternate pronunciations.
 - **What is known before the real run (spelling and sound only, no meaning):** of 34 pairs in `data/eval/expected_traps.json`, which Claude wrote before building the finder, 26 are in the top 100 of 44,850 pairs, 29 in the top 200 and 32 in the top 500. The two clearly missed are ambiguous / ambivalent and adulation / adulterate, which share only a stem. This is a smoke test: Claude chose the pairs and the finder was built knowing them, so it says nothing about precision.
 - **Evaluation still to do:** the plan's trap-finder precision, meaning how many of the top 100 Vishal would accept as real traps, is measured from his `accept` column.
+- **Revised after the first real run (2026-11-16):** the meaning term worked against its purpose, so it now has a weight that defaults to 0. Meaning is still shown in the CSV for the reviewer, but it no longer changes the order.
+  - With `max(spelling, sound) * (1 - meaning)`, only 5 of the 34 expected pairs reached the top 100. Ranked by `max(spelling, sound)` alone, 25 did.
+  - Why: true traps are *more* similar in meaning than average pairs, not less. Mean cosine similarity is 0.45 for the 34 expected pairs, against 0.20 for all 44,850 pairs and 0.53 for the synonym-key pairs. Dropping pairs above a meaning cutoff instead does not help either (0.5: 12 of 34; 0.7: 24 of 34), because the traps overlap with real synonyms.
+  - Two explanations fit, and the data so far cannot tell them apart: many real traps share a root and partly share meaning (amiable / amicable, equivocal / equivocate), and the embedded text contains the word itself, so similar spellings may pull vectors together. Entry 13 sets up the test.
+  - Caveat: the 34 pairs are Claude's own and the finder was built knowing them. They show the meaning term was harmful, not that the new ranking is good. Precision still comes from Vishal's review.
+- **Known weakness:** sound matches on short Metaphone codes produce false positives (deride / trite is rank 4; codes `TRT` and `TRT`). They thin out the list from about rank 28. Better to tune this against the `accept` column than against Claude's 34 pairs.
 - **My reasoning:** _TODO (Vishal)_
+
+## 13. Does the word's spelling leak into the meaning map?
+
+- **Date:** 2026-11-16
+- **Status:** experiment set up, not yet run. It needs the models, so it runs on my laptop.
+- **Question:** the text embedded for each word is "word: definition. example. example." The word appears in it up to three times. If that pulls look-alike words together, the meaning map partly encodes spelling, which is exactly what embedding definitions was meant to prevent (plan: "stops spelling from leaking into meaning").
+- **Set-up:** `embed.py --text` now has two variants that never show the model the word: `definition` (the definition alone) and `masked` (definition and examples, with the word and its inflections replaced by `___`). Tests confirm that no word's spelling appears in its own text in either mode.
+- **What to compare, for mpnet in each mode:**
+  1. Synonym quality: recall@5 on the frozen answer key (`compare_models.py` picks the variants up automatically).
+  2. Leakage: the mean meaning similarity of the 34 expected trap pairs relative to all pairs. If it falls a lot in the `masked` mode, spelling was leaking. If it stays near 0.45, the traps are genuinely related in meaning.
+- **Risk to watch:** choosing among several variants on the same 50-word key slightly overfits to that key. Only a clear gap should change the choice of embedding text.
+- **My reasoning:** _TODO (Vishal)_
+

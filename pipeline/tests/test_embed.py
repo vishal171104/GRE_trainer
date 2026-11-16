@@ -65,3 +65,35 @@ def test_normalize_rejects_nan_and_infinite_values():
     for bad_value in (np.nan, np.inf):
         with pytest.raises(ValueError, match="NaN"):
             embed.normalize(np.array([[1.0, bad_value, 0.0]]))
+
+
+def test_definition_mode_embeds_only_the_definition():
+    assert embed.build_text(WORDS[0], "definition") == "Open to bribery."
+
+
+def test_masked_mode_hides_the_word_and_its_inflections():
+    entry = {
+        "word": "castigate",
+        "definition": "To scold someone severely.",
+        "examples": ["She castigated the team.", "Castigating them helped nobody."],
+    }
+    assert embed.build_text(entry, "masked") == "To scold someone severely. She ___ the team. ___ them helped nobody."
+
+
+def test_unknown_text_mode_is_rejected():
+    with pytest.raises(ValueError):
+        embed.build_text(WORDS[0], "everything")
+
+
+def test_output_names_keep_the_default_unchanged():
+    assert embed.output_name("mpnet", "full") == "mpnet"
+    assert embed.output_name("mpnet", "masked") == "mpnet-masked"
+
+
+def test_definition_and_masked_texts_never_contain_the_word_on_the_real_list():
+    from validate_words import stem
+
+    for entry in embed.load_words():
+        for mode in ("definition", "masked"):
+            text = embed.build_text(entry, mode).lower()
+            assert stem(entry["word"]) not in text, (entry["word"], mode)

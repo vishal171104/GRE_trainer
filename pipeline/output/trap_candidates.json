@@ -1,0 +1,1002 @@
+[
+ {
+  "rank": 1,
+  "word_a": "apprise",
+  "word_b": "appraise",
+  "spelling": 0.875,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.3296,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 2,
+  "word_a": "censure",
+  "word_b": "censor",
+  "spelling": 0.7143,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.5163,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 3,
+  "word_a": "complacent",
+  "word_b": "complaisant",
+  "spelling": 0.7273,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.4563,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 4,
+  "word_a": "deride",
+  "word_b": "trite",
+  "spelling": 0.5,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.139,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 5,
+  "word_a": "discreet",
+  "word_b": "discrete",
+  "spelling": 0.75,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.3233,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 6,
+  "word_a": "exalt",
+  "word_b": "exult",
+  "spelling": 0.8,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.5234,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 7,
+  "word_a": "ingenious",
+  "word_b": "ingenuous",
+  "spelling": 0.8889,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.6011,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 8,
+  "word_a": "proscribe",
+  "word_b": "prescribe",
+  "spelling": 0.8889,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.5897,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 9,
+  "word_a": "venal",
+  "word_b": "venial",
+  "spelling": 0.8333,
+  "sound": 1.0,
+  "lookalike": 1.0,
+  "meaning": 0.5267,
+  "trap_score": 1.0
+ },
+ {
+  "rank": 10,
+  "word_a": "deprecate",
+  "word_b": "depreciate",
+  "spelling": 0.9,
+  "sound": 0.8,
+  "lookalike": 0.9,
+  "meaning": 0.747,
+  "trap_score": 0.9
+ },
+ {
+  "rank": 11,
+  "word_a": "impervious",
+  "word_b": "imperious",
+  "spelling": 0.9,
+  "sound": 0.8333,
+  "lookalike": 0.9,
+  "meaning": 0.394,
+  "trap_score": 0.9
+ },
+ {
+  "rank": 12,
+  "word_a": "disparage",
+  "word_b": "disparate",
+  "spelling": 0.8889,
+  "sound": 0.8,
+  "lookalike": 0.8889,
+  "meaning": 0.4248,
+  "trap_score": 0.8889
+ },
+ {
+  "rank": 13,
+  "word_a": "tortuous",
+  "word_b": "torturous",
+  "spelling": 0.8889,
+  "sound": 0.8,
+  "lookalike": 0.8889,
+  "meaning": 0.7368,
+  "trap_score": 0.8889
+ },
+ {
+  "rank": 14,
+  "word_a": "amiable",
+  "word_b": "amicable",
+  "spelling": 0.875,
+  "sound": 0.8,
+  "lookalike": 0.875,
+  "meaning": 0.6546,
+  "trap_score": 0.875
+ },
+ {
+  "rank": 15,
+  "word_a": "averse",
+  "word_b": "adverse",
+  "spelling": 0.8571,
+  "sound": 0.8,
+  "lookalike": 0.8571,
+  "meaning": 0.3152,
+  "trap_score": 0.8571
+ },
+ {
+  "rank": 16,
+  "word_a": "perspicacious",
+  "word_b": "perspicuous",
+  "spelling": 0.7692,
+  "sound": 0.8571,
+  "lookalike": 0.8571,
+  "meaning": 0.6421,
+  "trap_score": 0.8571
+ },
+ {
+  "rank": 17,
+  "word_a": "abstruse",
+  "word_b": "abstemious",
+  "spelling": 0.5,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.3322,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 18,
+  "word_a": "credible",
+  "word_b": "creditable",
+  "spelling": 0.8,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.4184,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 19,
+  "word_a": "dissonance",
+  "word_b": "disingenuous",
+  "spelling": 0.3333,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.2586,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 20,
+  "word_a": "excoriate",
+  "word_b": "exonerate",
+  "spelling": 0.5556,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.5559,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 21,
+  "word_a": "indigenous",
+  "word_b": "indigent",
+  "spelling": 0.7,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.4068,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 22,
+  "word_a": "indolent",
+  "word_b": "indigent",
+  "spelling": 0.75,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.4473,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 23,
+  "word_a": "ingenious",
+  "word_b": "indigenous",
+  "spelling": 0.7,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.3441,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 24,
+  "word_a": "ingenuous",
+  "word_b": "indigenous",
+  "spelling": 0.7,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.2964,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 25,
+  "word_a": "insipid",
+  "word_b": "incipient",
+  "spelling": 0.5556,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.4016,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 26,
+  "word_a": "pernicious",
+  "word_b": "pertinacious",
+  "spelling": 0.75,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.3836,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 27,
+  "word_a": "superfluous",
+  "word_b": "supercilious",
+  "spelling": 0.75,
+  "sound": 0.8333,
+  "lookalike": 0.8333,
+  "meaning": 0.2538,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 28,
+  "word_a": "turbid",
+  "word_b": "turgid",
+  "spelling": 0.8333,
+  "sound": 0.75,
+  "lookalike": 0.8333,
+  "meaning": 0.5644,
+  "trap_score": 0.8333
+ },
+ {
+  "rank": 29,
+  "word_a": "acrimony",
+  "word_b": "acumen",
+  "spelling": 0.5,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.1882,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 30,
+  "word_a": "ardent",
+  "word_b": "prudent",
+  "spelling": 0.7143,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2751,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 31,
+  "word_a": "candid",
+  "word_b": "contrite",
+  "spelling": 0.375,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.3297,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 32,
+  "word_a": "castigate",
+  "word_b": "caustic",
+  "spelling": 0.4444,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.343,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 33,
+  "word_a": "caustic",
+  "word_b": "quixotic",
+  "spelling": 0.375,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.297,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 34,
+  "word_a": "deleterious",
+  "word_b": "torturous",
+  "spelling": 0.4545,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.3414,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 35,
+  "word_a": "denigrate",
+  "word_b": "discreet",
+  "spelling": 0.2222,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2818,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 36,
+  "word_a": "denigrate",
+  "word_b": "discrete",
+  "spelling": 0.4444,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.0356,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 37,
+  "word_a": "desiccate",
+  "word_b": "discreet",
+  "spelling": 0.3333,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.1916,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 38,
+  "word_a": "desiccate",
+  "word_b": "discrete",
+  "spelling": 0.5556,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.1545,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 39,
+  "word_a": "diffident",
+  "word_b": "dilettante",
+  "spelling": 0.4,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.4812,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 40,
+  "word_a": "dilettante",
+  "word_b": "diligent",
+  "spelling": 0.5,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.4357,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 41,
+  "word_a": "discreet",
+  "word_b": "disparate",
+  "spelling": 0.4444,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2644,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 42,
+  "word_a": "discrete",
+  "word_b": "disparate",
+  "spelling": 0.6667,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.3378,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 43,
+  "word_a": "duplicity",
+  "word_b": "placid",
+  "spelling": 0.4444,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.1541,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 44,
+  "word_a": "eminent",
+  "word_b": "imminent",
+  "spelling": 0.75,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2896,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 45,
+  "word_a": "equivocal",
+  "word_b": "equivocate",
+  "spelling": 0.8,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.5612,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 46,
+  "word_a": "fastidious",
+  "word_b": "fortuitous",
+  "spelling": 0.5,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2379,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 47,
+  "word_a": "garrulous",
+  "word_b": "credulous",
+  "spelling": 0.5556,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.4585,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 48,
+  "word_a": "gullible",
+  "word_b": "culpable",
+  "spelling": 0.625,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.3722,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 49,
+  "word_a": "impetuous",
+  "word_b": "imperious",
+  "spelling": 0.7778,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.6181,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 50,
+  "word_a": "mendacious",
+  "word_b": "tenacious",
+  "spelling": 0.8,
+  "sound": 0.6,
+  "lookalike": 0.8,
+  "meaning": 0.2902,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 51,
+  "word_a": "nascent",
+  "word_b": "quiescent",
+  "spelling": 0.5556,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.4077,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 52,
+  "word_a": "nascent",
+  "word_b": "rescind",
+  "spelling": 0.4286,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.0556,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 53,
+  "word_a": "perfidious",
+  "word_b": "pernicious",
+  "spelling": 0.8,
+  "sound": 0.6,
+  "lookalike": 0.8,
+  "meaning": 0.4492,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 54,
+  "word_a": "perfidious",
+  "word_b": "profuse",
+  "spelling": 0.3,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2939,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 55,
+  "word_a": "pernicious",
+  "word_b": "pugnacious",
+  "spelling": 0.7,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2395,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 56,
+  "word_a": "pervasive",
+  "word_b": "profuse",
+  "spelling": 0.3333,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2908,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 57,
+  "word_a": "precarious",
+  "word_b": "gregarious",
+  "spelling": 0.8,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.1314,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 58,
+  "word_a": "prodigal",
+  "word_b": "paradigm",
+  "spelling": 0.5,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.0662,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 59,
+  "word_a": "prodigious",
+  "word_b": "propitious",
+  "spelling": 0.8,
+  "sound": 0.6,
+  "lookalike": 0.8,
+  "meaning": 0.3105,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 60,
+  "word_a": "quiescent",
+  "word_b": "rescind",
+  "spelling": 0.4444,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.1799,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 61,
+  "word_a": "reticent",
+  "word_b": "rescind",
+  "spelling": 0.5,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2288,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 62,
+  "word_a": "sanguine",
+  "word_b": "sanguinary",
+  "spelling": 0.7,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.5974,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 63,
+  "word_a": "sedulous",
+  "word_b": "listless",
+  "spelling": 0.25,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2618,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 64,
+  "word_a": "soporific",
+  "word_b": "sporadic",
+  "spelling": 0.6667,
+  "sound": 0.8,
+  "lookalike": 0.8,
+  "meaning": 0.2339,
+  "trap_score": 0.8
+ },
+ {
+  "rank": 65,
+  "word_a": "credulous",
+  "word_b": "sedulous",
+  "spelling": 0.7778,
+  "sound": 0.6,
+  "lookalike": 0.7778,
+  "meaning": 0.3191,
+  "trap_score": 0.7778
+ },
+ {
+  "rank": 66,
+  "word_a": "indigent",
+  "word_b": "indignant",
+  "spelling": 0.7778,
+  "sound": 0.7143,
+  "lookalike": 0.7778,
+  "meaning": 0.4723,
+  "trap_score": 0.7778
+ },
+ {
+  "rank": 67,
+  "word_a": "perspicacious",
+  "word_b": "pertinacious",
+  "spelling": 0.7692,
+  "sound": 0.5714,
+  "lookalike": 0.7692,
+  "meaning": 0.6533,
+  "trap_score": 0.7692
+ },
+ {
+  "rank": 68,
+  "word_a": "appease",
+  "word_b": "appraise",
+  "spelling": 0.75,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.2963,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 69,
+  "word_a": "appease",
+  "word_b": "apprise",
+  "spelling": 0.7143,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.3649,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 70,
+  "word_a": "appraise",
+  "word_b": "spurious",
+  "spelling": 0.25,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.15,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 71,
+  "word_a": "apprise",
+  "word_b": "spurious",
+  "spelling": 0.375,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.0193,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 72,
+  "word_a": "arduous",
+  "word_b": "assiduous",
+  "spelling": 0.6667,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.6382,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 73,
+  "word_a": "austere",
+  "word_b": "assiduous",
+  "spelling": 0.2222,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.3347,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 74,
+  "word_a": "averse",
+  "word_b": "appraise",
+  "spelling": 0.5,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1743,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 75,
+  "word_a": "averse",
+  "word_b": "apprise",
+  "spelling": 0.5714,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1504,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 76,
+  "word_a": "craven",
+  "word_b": "cacophony",
+  "spelling": 0.2222,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1917,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 77,
+  "word_a": "deride",
+  "word_b": "turbid",
+  "spelling": 0.3333,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1182,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 78,
+  "word_a": "deride",
+  "word_b": "turgid",
+  "spelling": 0.3333,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1515,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 79,
+  "word_a": "digress",
+  "word_b": "timorous",
+  "spelling": 0.375,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1988,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 80,
+  "word_a": "elicit",
+  "word_b": "elude",
+  "spelling": 0.3333,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.2653,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 81,
+  "word_a": "elicit",
+  "word_b": "illicit",
+  "spelling": 0.7143,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1487,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 82,
+  "word_a": "elicit",
+  "word_b": "placid",
+  "spelling": 0.5,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.2586,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 83,
+  "word_a": "emulate",
+  "word_b": "elude",
+  "spelling": 0.4286,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1928,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 84,
+  "word_a": "fallacious",
+  "word_b": "coalesce",
+  "spelling": 0.2,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1552,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 85,
+  "word_a": "flaunt",
+  "word_b": "foment",
+  "spelling": 0.5,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.2286,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 86,
+  "word_a": "flaunt",
+  "word_b": "salient",
+  "spelling": 0.4286,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.2244,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 87,
+  "word_a": "flout",
+  "word_b": "flaunt",
+  "spelling": 0.6667,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.501,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 88,
+  "word_a": "flout",
+  "word_b": "vacillate",
+  "spelling": 0.2222,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.2627,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 89,
+  "word_a": "gullible",
+  "word_b": "malleable",
+  "spelling": 0.5556,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.3817,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 90,
+  "word_a": "illicit",
+  "word_b": "placid",
+  "spelling": 0.4286,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1309,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 91,
+  "word_a": "ingenuous",
+  "word_b": "disingenuous",
+  "spelling": 0.75,
+  "sound": 0.6667,
+  "lookalike": 0.75,
+  "meaning": 0.6747,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 92,
+  "word_a": "lament",
+  "word_b": "foment",
+  "spelling": 0.6667,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1807,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 93,
+  "word_a": "lucid",
+  "word_b": "elicit",
+  "spelling": 0.5,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.0548,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 94,
+  "word_a": "lucid",
+  "word_b": "illicit",
+  "spelling": 0.4286,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.0284,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 95,
+  "word_a": "lucid",
+  "word_b": "placid",
+  "spelling": 0.6667,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.162,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 96,
+  "word_a": "mundane",
+  "word_b": "anodyne",
+  "spelling": 0.4286,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.29,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 97,
+  "word_a": "nebulous",
+  "word_b": "sedulous",
+  "spelling": 0.75,
+  "sound": 0.5,
+  "lookalike": 0.75,
+  "meaning": 0.3753,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 98,
+  "word_a": "paucity",
+  "word_b": "placid",
+  "spelling": 0.4286,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1923,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 99,
+  "word_a": "placate",
+  "word_b": "placid",
+  "spelling": 0.5714,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.4911,
+  "trap_score": 0.75
+ },
+ {
+  "rank": 100,
+  "word_a": "refute",
+  "word_b": "brevity",
+  "spelling": 0.4286,
+  "sound": 0.75,
+  "lookalike": 0.75,
+  "meaning": 0.1828,
+  "trap_score": 0.75
+ }
+]
