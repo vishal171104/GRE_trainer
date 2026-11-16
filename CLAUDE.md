@@ -4,7 +4,7 @@ AI vocabulary trainer for GRE preparation: maps words by meaning in a 3D galaxy 
 
 ## Status
 
-Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`embed.py`) and 2 (`compare_models.py`) are done and the model is chosen: mpnet (`DECISIONS.md`, entry 11). Step 3 (`layout.py`) has been run: neighbour preservation UMAP 0.449, t-SNE 0.460, PCA 0.185, and UMAP is kept (`DECISIONS.md`, entry 4). Step 4 (`find_traps.py`) has been run on the real embeddings: `pipeline/output/trap_candidates.csv` holds the top 100 for Vishal's hand review. Meaning no longer affects the ranking by default (`DECISIONS.md`, entry 12), and an experiment on whether spelling leaks into the embeddings is set up but not run (entry 13). Step 5 is written: `supabase/migrations/0001_initial_schema.sql` and `pipeline/build_seed.py`, which writes `supabase/seed.sql` (not committed until the trap review is done). The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
+Milestone 1 (word list): `data/words.json` holds all 300 words, AI-drafted. Still open: Vishal's dictionary check of every definition. Milestone 2 (offline pipeline) is in progress, in five steps (see `DECISIONS.md`, entry 10). Steps 1 (`embed.py`) and 2 (`compare_models.py`) are done and the model is chosen: mpnet (`DECISIONS.md`, entry 11). Step 3 (`layout.py`) has been run: neighbour preservation UMAP 0.449, t-SNE 0.460, PCA 0.185, and UMAP is kept (`DECISIONS.md`, entry 4). Step 4 (`find_traps.py`) has been run on the real embeddings: `pipeline/output/trap_candidates.csv` holds the top 100 for Vishal's hand review. Meaning no longer affects the ranking by default (`DECISIONS.md`, entry 12), and an experiment on whether spelling leaks into the embeddings is set up but not run (entry 13). Step 5 is written: `supabase/migrations/0001_initial_schema.sql` and `pipeline/build_seed.py`, which writes `supabase/seed.sql` (not committed until the trap review is done). Milestone 3 (app skeleton) is in progress: `web/` has the Next.js app with Google sign-in through Supabase; the Supabase, Google and Vercel setup in `web/README.md` is Vishal's. The synonym answer key in `data/eval/synonym_key.json` is frozen. Do not start a later milestone until Vishal says so.
 
 ## Stack
 
@@ -66,6 +66,16 @@ Database tests need a Postgres server with pgvector; they are skipped otherwise.
 
 ```bash
 WORDORBIT_TEST_DATABASE_URL=postgresql:///postgres python -m pytest pipeline/tests
+```
+
+## Web app
+
+Next.js 16: read `web/AGENTS.md` and the bundled docs in `web/node_modules/next/dist/docs/` before writing Next.js code; `middleware` is now `proxy`, `cookies()` and `searchParams` are async, and with Cache Components on, anything that reads the request must sit inside `<Suspense>`.
+
+```bash
+cd web && npm install
+npm run dev                          # needs web/.env.local (copy from .env.example)
+npm run lint && npx tsc --noEmit && npm run build
 ```
 
 ## Working conventions

@@ -165,3 +165,11 @@ Each entry: what was chosen, what the alternatives were, and why. "My reasoning"
 - **How it is checked:** `pipeline/tests/test_database.py` applies the migration and seed to a throwaway Postgres database with Supabase's `auth` schema stubbed, then acts as two users and a signed-out visitor. Switching off row-level security on `answers` makes exactly the two answer tests fail, so the tests do test the protection. The stub is not Supabase itself, so the policies should be checked once more in the real project.
 - **My reasoning:** _TODO (Vishal)_
 
+
+## 15. Milestone 3 app skeleton: Tailwind, Google-only sign-in
+
+- **Date:** 2026-11-16
+- **Chosen:** Tailwind CSS for styling; Google as the only sign-in method for now (email magic link can be added if beta users ask). Accepted from Claude's recommendation.
+- **Alternatives:** CSS modules; Google plus email magic link.
+- **Built on:** Next.js 16.4 with Cache Components on (the template default): parts of a page that read the session sit behind `<Suspense>` so the rest is served instantly. Next.js 16 renamed `middleware.ts` to `proxy.ts`; ours refreshes the Supabase session on each request.
+- **My reasoning:** _TODO (Vishal)_
