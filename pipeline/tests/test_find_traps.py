@@ -32,11 +32,15 @@ def test_homophones_get_a_perfect_sound_score():
         assert find_traps.sound_score(find_traps.phonetic_code(a), find_traps.phonetic_code(b)) == 1.0
 
 
-def test_trap_score_prefers_look_alikes_that_mean_different_things():
-    unrelated = find_traps.trap_score(lookalike=0.9, meaning=0.1)
-    related = find_traps.trap_score(lookalike=0.9, meaning=0.8)
+def test_trap_score_ignores_meaning_by_default():
+    assert find_traps.trap_score(0.9, 0.1) == find_traps.trap_score(0.9, 0.8) == 0.9
+
+
+def test_trap_score_with_a_weight_prefers_look_alikes_that_mean_different_things():
+    unrelated = find_traps.trap_score(lookalike=0.9, meaning=0.1, meaning_weight=1.0)
+    related = find_traps.trap_score(lookalike=0.9, meaning=0.8, meaning_weight=1.0)
     assert unrelated > related
-    assert find_traps.trap_score(0.9, -0.3) == 0.9  # negative similarity is not a bonus
+    assert find_traps.trap_score(0.9, -0.3, meaning_weight=1.0) == 0.9  # negative similarity is not a bonus
 
 
 def test_select_candidates_filters_sorts_and_limits():
@@ -91,3 +95,14 @@ def test_spelling_and_sound_alone_find_most_of_the_expected_traps():
     candidates = find_traps.select_candidates(find_traps.score_pairs(words), top=100)
     found, missing = find_traps.expected_coverage(candidates, expected)
     assert len(found) >= 24, f"missing: {missing}"
+
+
+def test_has_reviews_detects_accept_marks_and_protects_them(tmp_path):
+    candidates = find_traps.select_candidates(find_traps.score_pairs(["venal", "venial"]), top=5)
+    csv_path, _ = find_traps.write_outputs(candidates, tmp_path)
+    assert find_traps.has_reviews(csv_path) is False  # fresh file, nothing marked
+    text = csv_path.read_text(encoding="utf-8").splitlines()
+    text[1] += "y"  # the accept column is last; mark the first pair as accepted
+    csv_path.write_text("\n".join(text) + "\n", encoding="utf-8")
+    assert find_traps.has_reviews(csv_path) is True
+    assert find_traps.has_reviews(tmp_path / "missing.csv") is False
