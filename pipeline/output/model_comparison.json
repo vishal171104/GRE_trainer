@@ -1,0 +1,2120 @@
+{
+  "top_k": 5,
+  "targets": 50,
+  "winner": "mpnet",
+  "models": {
+    "bge-base": {
+      "hits_at_5": 1.1,
+      "recall_at_5": 0.5153333333333332,
+      "per_word": {
+        "castigate": {
+          "neighbours": [
+            "mitigate",
+            "abjure",
+            "assuage",
+            "censure",
+            "platitude"
+          ],
+          "found": [
+            "censure"
+          ],
+          "hits": 1,
+          "recall": 0.2
+        },
+        "laconic": {
+          "neighbours": [
+            "succinct",
+            "verbose",
+            "terse",
+            "superfluous",
+            "banal"
+          ],
+          "found": [
+            "succinct",
+            "terse"
+          ],
+          "hits": 2,
+          "recall": 0.5
+        },
+        "loquacious": {
+          "neighbours": [
+            "obsequious",
+            "imperturbable",
+            "impetuous",
+            "ingenuous",
+            "candid"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "ephemeral": {
+          "neighbours": [
+            "melancholy",
+            "quiescent",
+            "transient",
+            "desiccate",
+            "restive"
+          ],
+          "found": [
+            "transient"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "mitigate": {
+          "neighbours": [
+            "abate",
+            "ameliorate",
+            "castigate",
+            "assuage",
+            "appease"
+          ],
+          "found": [
+            "abate",
+            "ameliorate",
+            "assuage"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "placate": {
+          "neighbours": [
+            "indignant",
+            "appease",
+            "exasperate",
+            "ostracize",
+            "abate"
+          ],
+          "found": [
+            "appease"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        },
+        "obdurate": {
+          "neighbours": [
+            "pertinacious",
+            "recalcitrant",
+            "implacable",
+            "substantiate",
+            "disinterested"
+          ],
+          "found": [
+            "pertinacious",
+            "recalcitrant",
+            "implacable"
+          ],
+          "hits": 3,
+          "recall": 0.75
+        },
+        "laud": {
+          "neighbours": [
+            "accolade",
+            "exalt",
+            "didactic",
+            "aesthetic",
+            "eminent"
+          ],
+          "found": [
+            "exalt"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "disparage": {
+          "neighbours": [
+            "disparate",
+            "dichotomy",
+            "dissonance",
+            "deride",
+            "denigrate"
+          ],
+          "found": [
+            "deride",
+            "denigrate"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "esoteric": {
+          "neighbours": [
+            "enigma",
+            "arcane",
+            "ascetic",
+            "erudite",
+            "obfuscate"
+          ],
+          "found": [
+            "arcane"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "lucid": {
+          "neighbours": [
+            "perspicuous",
+            "succinct",
+            "cogent",
+            "serene",
+            "perspicacious"
+          ],
+          "found": [
+            "perspicuous"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "capricious": {
+          "neighbours": [
+            "rescind",
+            "pertinacious",
+            "imminent",
+            "complaisant",
+            "imperious"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "meticulous": {
+          "neighbours": [
+            "spurious",
+            "assiduous",
+            "sedulous",
+            "ingenuous",
+            "diligent"
+          ],
+          "found": [
+            "assiduous",
+            "sedulous",
+            "diligent"
+          ],
+          "hits": 3,
+          "recall": 0.75
+        },
+        "banal": {
+          "neighbours": [
+            "bombastic",
+            "hackneyed",
+            "laconic",
+            "platitude",
+            "mundane"
+          ],
+          "found": [
+            "hackneyed",
+            "mundane"
+          ],
+          "hits": 2,
+          "recall": 0.4
+        },
+        "paucity": {
+          "neighbours": [
+            "impecunious",
+            "indigent",
+            "fallacious",
+            "coalesce",
+            "dearth"
+          ],
+          "found": [
+            "dearth"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "copious": {
+          "neighbours": [
+            "incipient",
+            "assiduous",
+            "profuse",
+            "brevity",
+            "gregarious"
+          ],
+          "found": [
+            "profuse"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "lethargic": {
+          "neighbours": [
+            "listless",
+            "turgid",
+            "enervate",
+            "ennui",
+            "soporific"
+          ],
+          "found": [
+            "listless"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        },
+        "zealous": {
+          "neighbours": [
+            "ebullient",
+            "ardent",
+            "platitude",
+            "alacrity",
+            "prodigious"
+          ],
+          "found": [
+            "ardent"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "parsimonious": {
+          "neighbours": [
+            "capricious",
+            "impecunious",
+            "perspicacious",
+            "pertinacious",
+            "disingenuous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "duplicity": {
+          "neighbours": [
+            "disingenuous",
+            "surreptitious",
+            "spurious",
+            "credulous",
+            "ingenuous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "specious": {
+          "neighbours": [
+            "innocuous",
+            "fallacious",
+            "spurious",
+            "propitious",
+            "credulous"
+          ],
+          "found": [
+            "fallacious",
+            "spurious"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "intrepid": {
+          "neighbours": [
+            "dauntless",
+            "imperturbable",
+            "torpid",
+            "irascible",
+            "complacent"
+          ],
+          "found": [
+            "dauntless"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "clandestine": {
+          "neighbours": [
+            "discreet",
+            "illicit",
+            "abscond",
+            "furtive",
+            "abstain"
+          ],
+          "found": [
+            "furtive"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "deleterious": {
+          "neighbours": [
+            "pernicious",
+            "detrimental",
+            "incipient",
+            "proscribe",
+            "adverse"
+          ],
+          "found": [
+            "pernicious",
+            "detrimental",
+            "adverse"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "munificent": {
+          "neighbours": [
+            "ostentatious",
+            "magnanimous",
+            "mollify",
+            "sycophant",
+            "benevolent"
+          ],
+          "found": [
+            "magnanimous",
+            "benevolent"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "belligerent": {
+          "neighbours": [
+            "conciliatory",
+            "truculent",
+            "imperious",
+            "indignant",
+            "obsequious"
+          ],
+          "found": [
+            "truculent"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "diffident": {
+          "neighbours": [
+            "disinterested",
+            "impetuous",
+            "disingenuous",
+            "reticent",
+            "equivocal"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "antiquated": {
+          "neighbours": [
+            "obsolete",
+            "archaic",
+            "deprecate",
+            "mundane",
+            "depreciate"
+          ],
+          "found": [
+            "obsolete",
+            "archaic"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "haughty": {
+          "neighbours": [
+            "obsequious",
+            "disingenuous",
+            "indignant",
+            "truculent",
+            "imperious"
+          ],
+          "found": [
+            "imperious"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "placid": {
+          "neighbours": [
+            "serene",
+            "melancholy",
+            "bucolic",
+            "nonchalant",
+            "quiescent"
+          ],
+          "found": [
+            "serene"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "morose": {
+          "neighbours": [
+            "craven",
+            "lethargic",
+            "lugubrious",
+            "melancholy",
+            "reticent"
+          ],
+          "found": [
+            "lugubrious",
+            "melancholy"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "obsequious": {
+          "neighbours": [
+            "complaisant",
+            "imperious",
+            "supercilious",
+            "loquacious",
+            "haughty"
+          ],
+          "found": [
+            "complaisant"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "exonerate": {
+          "neighbours": [
+            "exculpate",
+            "excoriate",
+            "exult",
+            "culpable",
+            "refute"
+          ],
+          "found": [
+            "exculpate"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "impecunious": {
+          "neighbours": [
+            "impetuous",
+            "frugal",
+            "indigent",
+            "abstemious",
+            "austere"
+          ],
+          "found": [
+            "indigent"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "nascent": {
+          "neighbours": [
+            "quiescent",
+            "burgeon",
+            "depreciate",
+            "paucity",
+            "ubiquitous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "amiable": {
+          "neighbours": [
+            "gregarious",
+            "amicable",
+            "obsequious",
+            "complaisant",
+            "sanguine"
+          ],
+          "found": [
+            "gregarious",
+            "amicable"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "perfunctory": {
+          "neighbours": [
+            "perspicacious",
+            "impetuous",
+            "imperious",
+            "profuse",
+            "perspicuous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "corroborate": {
+          "neighbours": [
+            "refute",
+            "substantiate",
+            "cognizant",
+            "juxtapose",
+            "bolster"
+          ],
+          "found": [
+            "substantiate"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "caustic": {
+          "neighbours": [
+            "excoriate",
+            "facetious",
+            "truculent",
+            "fastidious",
+            "torturous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "enigma": {
+          "neighbours": [
+            "esoteric",
+            "obfuscate",
+            "arcane",
+            "erudite",
+            "discreet"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "gullible": {
+          "neighbours": [
+            "credulous",
+            "credible",
+            "disingenuous",
+            "spurious",
+            "audacious"
+          ],
+          "found": [
+            "credulous"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "iconoclast": {
+          "neighbours": [
+            "polemic",
+            "dogmatic",
+            "paradigm",
+            "sycophant",
+            "denigrate"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "ubiquitous": {
+          "neighbours": [
+            "pervasive",
+            "proliferate",
+            "malleable",
+            "obsolete",
+            "plethora"
+          ],
+          "found": [
+            "pervasive"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "nebulous": {
+          "neighbours": [
+            "perspicacious",
+            "capricious",
+            "terse",
+            "platitude",
+            "fawn"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "irascible": {
+          "neighbours": [
+            "imperturbable",
+            "implacable",
+            "diatribe",
+            "impetuous",
+            "pugnacious"
+          ],
+          "found": [
+            "pugnacious"
+          ],
+          "hits": 1,
+          "recall": 0.3333333333333333
+        },
+        "deride": {
+          "neighbours": [
+            "lampoon",
+            "denigrate",
+            "upbraid",
+            "facetious",
+            "disparage"
+          ],
+          "found": [
+            "lampoon",
+            "denigrate",
+            "disparage"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "garrulous": {
+          "neighbours": [
+            "credulous",
+            "facetious",
+            "harangue",
+            "obsequious",
+            "exasperate"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "terse": {
+          "neighbours": [
+            "laconic",
+            "equivocate",
+            "facetious",
+            "reticent",
+            "ambiguous"
+          ],
+          "found": [
+            "laconic"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "trite": {
+          "neighbours": [
+            "platitude",
+            "credulous",
+            "quixotic",
+            "facetious",
+            "hackneyed"
+          ],
+          "found": [
+            "hackneyed"
+          ],
+          "hits": 1,
+          "recall": 0.3333333333333333
+        },
+        "indolent": {
+          "neighbours": [
+            "impetuous",
+            "impecunious",
+            "diligent",
+            "recalcitrant",
+            "reticent"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        }
+      }
+    },
+    "minilm": {
+      "hits_at_5": 0.82,
+      "recall_at_5": 0.3963333333333333,
+      "per_word": {
+        "castigate": {
+          "neighbours": [
+            "harangue",
+            "mitigate",
+            "denigrate",
+            "deride",
+            "adverse"
+          ],
+          "found": [
+            "harangue"
+          ],
+          "hits": 1,
+          "recall": 0.2
+        },
+        "laconic": {
+          "neighbours": [
+            "verbose",
+            "succinct",
+            "terse",
+            "taciturn",
+            "banal"
+          ],
+          "found": [
+            "succinct",
+            "terse",
+            "taciturn"
+          ],
+          "hits": 3,
+          "recall": 0.75
+        },
+        "loquacious": {
+          "neighbours": [
+            "garrulous",
+            "taciturn",
+            "perspicacious",
+            "morose",
+            "haughty"
+          ],
+          "found": [
+            "garrulous"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "ephemeral": {
+          "neighbours": [
+            "transient",
+            "inchoate",
+            "melancholy",
+            "ebullient",
+            "ardent"
+          ],
+          "found": [
+            "transient"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "mitigate": {
+          "neighbours": [
+            "castigate",
+            "appease",
+            "abate",
+            "perfunctory",
+            "aggrandize"
+          ],
+          "found": [
+            "abate"
+          ],
+          "hits": 1,
+          "recall": 0.3333333333333333
+        },
+        "placate": {
+          "neighbours": [
+            "platitude",
+            "indignant",
+            "perfunctory",
+            "placid",
+            "appease"
+          ],
+          "found": [
+            "appease"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        },
+        "obdurate": {
+          "neighbours": [
+            "obsequious",
+            "equanimity",
+            "exasperate",
+            "excoriate",
+            "exculpate"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "laud": {
+          "neighbours": [
+            "admonish",
+            "ostentatious",
+            "candid",
+            "flaunt",
+            "accolade"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "disparage": {
+          "neighbours": [
+            "disparate",
+            "disinterested",
+            "disingenuous",
+            "dissonance",
+            "diffident"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "esoteric": {
+          "neighbours": [
+            "arcane",
+            "archaic",
+            "levity",
+            "enigma",
+            "zealous"
+          ],
+          "found": [
+            "arcane"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "lucid": {
+          "neighbours": [
+            "trite",
+            "paradigm",
+            "pragmatic",
+            "abstruse",
+            "perspicuous"
+          ],
+          "found": [
+            "perspicuous"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "capricious": {
+          "neighbours": [
+            "capitulate",
+            "pernicious",
+            "sardonic",
+            "ostentatious",
+            "belligerent"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "meticulous": {
+          "neighbours": [
+            "spurious",
+            "mundane",
+            "surreptitious",
+            "audacious",
+            "fastidious"
+          ],
+          "found": [
+            "fastidious"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        },
+        "banal": {
+          "neighbours": [
+            "zealous",
+            "harangue",
+            "hackneyed",
+            "laconic",
+            "garrulous"
+          ],
+          "found": [
+            "hackneyed"
+          ],
+          "hits": 1,
+          "recall": 0.2
+        },
+        "paucity": {
+          "neighbours": [
+            "impecunious",
+            "frugal",
+            "indigent",
+            "disparage",
+            "abstruse"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "copious": {
+          "neighbours": [
+            "abstemious",
+            "ostentatious",
+            "obsequious",
+            "deleterious",
+            "perspicuous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "lethargic": {
+          "neighbours": [
+            "restive",
+            "enervate",
+            "listless",
+            "incipient",
+            "abstemious"
+          ],
+          "found": [
+            "listless"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        },
+        "zealous": {
+          "neighbours": [
+            "garrulous",
+            "banal",
+            "exigent",
+            "harangue",
+            "facetious"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "parsimonious": {
+          "neighbours": [
+            "pariah",
+            "obsequious",
+            "pernicious",
+            "platitude",
+            "ostentatious"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "duplicity": {
+          "neighbours": [
+            "disingenuous",
+            "perfidious",
+            "exonerate",
+            "chicanery",
+            "surreptitious"
+          ],
+          "found": [
+            "chicanery"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "specious": {
+          "neighbours": [
+            "ostentatious",
+            "spurious",
+            "credible",
+            "pernicious",
+            "deleterious"
+          ],
+          "found": [
+            "spurious"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "intrepid": {
+          "neighbours": [
+            "dauntless",
+            "enervate",
+            "craven",
+            "insipid",
+            "diffident"
+          ],
+          "found": [
+            "dauntless"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "clandestine": {
+          "neighbours": [
+            "discreet",
+            "abscond",
+            "illicit",
+            "enigma",
+            "nonchalant"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "deleterious": {
+          "neighbours": [
+            "pernicious",
+            "culpable",
+            "illicit",
+            "dissonance",
+            "innocuous"
+          ],
+          "found": [
+            "pernicious"
+          ],
+          "hits": 1,
+          "recall": 0.3333333333333333
+        },
+        "munificent": {
+          "neighbours": [
+            "altruistic",
+            "gullible",
+            "magnanimous",
+            "eminent",
+            "censure"
+          ],
+          "found": [
+            "altruistic",
+            "magnanimous"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "belligerent": {
+          "neighbours": [
+            "harangue",
+            "truculent",
+            "sardonic",
+            "garrulous",
+            "admonish"
+          ],
+          "found": [
+            "truculent"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "diffident": {
+          "neighbours": [
+            "disingenuous",
+            "obsequious",
+            "disinterested",
+            "disparage",
+            "misanthrope"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "antiquated": {
+          "neighbours": [
+            "deprecate",
+            "obsolete",
+            "antipathy",
+            "erroneous",
+            "depreciate"
+          ],
+          "found": [
+            "obsolete"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "haughty": {
+          "neighbours": [
+            "truculent",
+            "obsequious",
+            "sardonic",
+            "imperious",
+            "loquacious"
+          ],
+          "found": [
+            "imperious"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "placid": {
+          "neighbours": [
+            "platitude",
+            "serene",
+            "placate",
+            "turbid",
+            "bucolic"
+          ],
+          "found": [
+            "serene"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "morose": {
+          "neighbours": [
+            "lugubrious",
+            "lament",
+            "melancholy",
+            "doleful",
+            "obsequious"
+          ],
+          "found": [
+            "lugubrious",
+            "melancholy",
+            "doleful"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "obsequious": {
+          "neighbours": [
+            "imperious",
+            "obdurate",
+            "garrulous",
+            "ostentatious",
+            "complaisant"
+          ],
+          "found": [
+            "complaisant"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "exonerate": {
+          "neighbours": [
+            "exculpate",
+            "excoriate",
+            "exasperate",
+            "exult",
+            "exalt"
+          ],
+          "found": [
+            "exculpate"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "impecunious": {
+          "neighbours": [
+            "impetuous",
+            "imperious",
+            "abstemious",
+            "imperturbable",
+            "impervious"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "nascent": {
+          "neighbours": [
+            "convoluted",
+            "paucity",
+            "quiescent",
+            "imminent",
+            "munificent"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "amiable": {
+          "neighbours": [
+            "amicable",
+            "gregarious",
+            "obsequious",
+            "benevolent",
+            "ingenuous"
+          ],
+          "found": [
+            "amicable",
+            "gregarious"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "perfunctory": {
+          "neighbours": [
+            "perfidious",
+            "perspicuous",
+            "pernicious",
+            "venial",
+            "contrite"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "corroborate": {
+          "neighbours": [
+            "cogent",
+            "credible",
+            "substantiate",
+            "cognizant",
+            "refute"
+          ],
+          "found": [
+            "substantiate"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "caustic": {
+          "neighbours": [
+            "truculent",
+            "sardonic",
+            "parsimonious",
+            "cacophony",
+            "facetious"
+          ],
+          "found": [
+            "sardonic"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "enigma": {
+          "neighbours": [
+            "obfuscate",
+            "clandestine",
+            "esoteric",
+            "dilettante",
+            "disingenuous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "gullible": {
+          "neighbours": [
+            "credulous",
+            "garrulous",
+            "disingenuous",
+            "chicanery",
+            "culpable"
+          ],
+          "found": [
+            "credulous"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "iconoclast": {
+          "neighbours": [
+            "sycophant",
+            "zealous",
+            "quixotic",
+            "dogmatic",
+            "paradigm"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "ubiquitous": {
+          "neighbours": [
+            "pervasive",
+            "eclectic",
+            "obsolete",
+            "gregarious",
+            "antiquated"
+          ],
+          "found": [
+            "pervasive"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "nebulous": {
+          "neighbours": [
+            "sedulous",
+            "bombastic",
+            "garrulous",
+            "anomaly",
+            "obsequious"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "irascible": {
+          "neighbours": [
+            "imperturbable",
+            "equanimity",
+            "amiable",
+            "listless",
+            "truculent"
+          ],
+          "found": [
+            "truculent"
+          ],
+          "hits": 1,
+          "recall": 0.3333333333333333
+        },
+        "deride": {
+          "neighbours": [
+            "denigrate",
+            "castigate",
+            "harangue",
+            "disparage",
+            "misanthrope"
+          ],
+          "found": [
+            "denigrate",
+            "disparage"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "garrulous": {
+          "neighbours": [
+            "obsequious",
+            "zealous",
+            "loquacious",
+            "harangue",
+            "gullible"
+          ],
+          "found": [
+            "loquacious"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "terse": {
+          "neighbours": [
+            "nonchalant",
+            "laconic",
+            "verbose",
+            "taciturn",
+            "contrite"
+          ],
+          "found": [
+            "laconic"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "trite": {
+          "neighbours": [
+            "quixotic",
+            "lucid",
+            "hackneyed",
+            "imminent",
+            "cognizant"
+          ],
+          "found": [
+            "hackneyed"
+          ],
+          "hits": 1,
+          "recall": 0.3333333333333333
+        },
+        "indolent": {
+          "neighbours": [
+            "obsequious",
+            "impecunious",
+            "lethargic",
+            "equanimity",
+            "assiduous"
+          ],
+          "found": [
+            "lethargic"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        }
+      }
+    },
+    "mpnet": {
+      "hits_at_5": 1.66,
+      "recall_at_5": 0.7649999999999999,
+      "per_word": {
+        "castigate": {
+          "neighbours": [
+            "excoriate",
+            "deride",
+            "denigrate",
+            "disparage",
+            "censure"
+          ],
+          "found": [
+            "excoriate",
+            "censure"
+          ],
+          "hits": 2,
+          "recall": 0.4
+        },
+        "laconic": {
+          "neighbours": [
+            "terse",
+            "banal",
+            "verbose",
+            "loquacious",
+            "perspicuous"
+          ],
+          "found": [
+            "terse"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        },
+        "loquacious": {
+          "neighbours": [
+            "garrulous",
+            "gregarious",
+            "taciturn",
+            "pugnacious",
+            "diffident"
+          ],
+          "found": [
+            "garrulous"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "ephemeral": {
+          "neighbours": [
+            "transient",
+            "quiescent",
+            "prosaic",
+            "incipient",
+            "implacable"
+          ],
+          "found": [
+            "transient"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "mitigate": {
+          "neighbours": [
+            "ameliorate",
+            "abate",
+            "exacerbate",
+            "assuage",
+            "mollify"
+          ],
+          "found": [
+            "ameliorate",
+            "abate",
+            "assuage"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "placate": {
+          "neighbours": [
+            "appease",
+            "mollify",
+            "assuage",
+            "placid",
+            "conciliatory"
+          ],
+          "found": [
+            "appease",
+            "mollify",
+            "assuage",
+            "conciliatory"
+          ],
+          "hits": 4,
+          "recall": 1.0
+        },
+        "obdurate": {
+          "neighbours": [
+            "recalcitrant",
+            "pertinacious",
+            "intransigent",
+            "implacable",
+            "diligent"
+          ],
+          "found": [
+            "recalcitrant",
+            "pertinacious",
+            "intransigent",
+            "implacable"
+          ],
+          "hits": 4,
+          "recall": 1.0
+        },
+        "laud": {
+          "neighbours": [
+            "accolade",
+            "adulation",
+            "exalt",
+            "fawn",
+            "extol"
+          ],
+          "found": [
+            "exalt",
+            "extol"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "disparage": {
+          "neighbours": [
+            "denigrate",
+            "deride",
+            "deprecate",
+            "castigate",
+            "censure"
+          ],
+          "found": [
+            "denigrate",
+            "deride",
+            "deprecate"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "esoteric": {
+          "neighbours": [
+            "arcane",
+            "enigma",
+            "clandestine",
+            "abstruse",
+            "erudite"
+          ],
+          "found": [
+            "arcane",
+            "abstruse"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "lucid": {
+          "neighbours": [
+            "succinct",
+            "abstruse",
+            "convoluted",
+            "perspicuous",
+            "cogent"
+          ],
+          "found": [
+            "perspicuous"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "capricious": {
+          "neighbours": [
+            "impetuous",
+            "mercurial",
+            "recalcitrant",
+            "pertinacious",
+            "parsimonious"
+          ],
+          "found": [
+            "mercurial"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "meticulous": {
+          "neighbours": [
+            "diligent",
+            "fastidious",
+            "assiduous",
+            "pedantic",
+            "sedulous"
+          ],
+          "found": [
+            "diligent",
+            "fastidious",
+            "assiduous",
+            "sedulous"
+          ],
+          "hits": 4,
+          "recall": 1.0
+        },
+        "banal": {
+          "neighbours": [
+            "hackneyed",
+            "platitude",
+            "bombastic",
+            "prosaic",
+            "trite"
+          ],
+          "found": [
+            "hackneyed",
+            "prosaic",
+            "trite"
+          ],
+          "hits": 3,
+          "recall": 0.6
+        },
+        "paucity": {
+          "neighbours": [
+            "dearth",
+            "indigent",
+            "apathy",
+            "listless",
+            "impecunious"
+          ],
+          "found": [
+            "dearth"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "copious": {
+          "neighbours": [
+            "profuse",
+            "prodigious",
+            "verbose",
+            "plethora",
+            "garrulous"
+          ],
+          "found": [
+            "profuse"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "lethargic": {
+          "neighbours": [
+            "listless",
+            "ennui",
+            "indolent",
+            "apathy",
+            "languid"
+          ],
+          "found": [
+            "listless",
+            "indolent",
+            "languid"
+          ],
+          "hits": 3,
+          "recall": 0.75
+        },
+        "zealous": {
+          "neighbours": [
+            "ardent",
+            "fervent",
+            "sanguinary",
+            "recalcitrant",
+            "parsimonious"
+          ],
+          "found": [
+            "ardent",
+            "fervent"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "parsimonious": {
+          "neighbours": [
+            "impecunious",
+            "pertinacious",
+            "sedulous",
+            "complaisant",
+            "prudent"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "duplicity": {
+          "neighbours": [
+            "disingenuous",
+            "chicanery",
+            "perfidious",
+            "mendacious",
+            "venal"
+          ],
+          "found": [
+            "chicanery"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "specious": {
+          "neighbours": [
+            "spurious",
+            "erroneous",
+            "fallacious",
+            "mendacious",
+            "disingenuous"
+          ],
+          "found": [
+            "spurious",
+            "fallacious"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "intrepid": {
+          "neighbours": [
+            "dauntless",
+            "craven",
+            "maverick",
+            "insipid",
+            "arduous"
+          ],
+          "found": [
+            "dauntless"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "clandestine": {
+          "neighbours": [
+            "discreet",
+            "surreptitious",
+            "illicit",
+            "esoteric",
+            "abscond"
+          ],
+          "found": [
+            "surreptitious"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "deleterious": {
+          "neighbours": [
+            "detrimental",
+            "pernicious",
+            "adverse",
+            "denigrate",
+            "impervious"
+          ],
+          "found": [
+            "detrimental",
+            "pernicious",
+            "adverse"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "munificent": {
+          "neighbours": [
+            "magnanimous",
+            "altruistic",
+            "ostentatious",
+            "benevolent",
+            "prodigious"
+          ],
+          "found": [
+            "magnanimous",
+            "altruistic",
+            "benevolent"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "belligerent": {
+          "neighbours": [
+            "pugnacious",
+            "irascible",
+            "recalcitrant",
+            "truculent",
+            "conciliatory"
+          ],
+          "found": [
+            "pugnacious",
+            "truculent"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "diffident": {
+          "neighbours": [
+            "reticent",
+            "taciturn",
+            "timorous",
+            "recalcitrant",
+            "dauntless"
+          ],
+          "found": [
+            "timorous"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "antiquated": {
+          "neighbours": [
+            "obsolete",
+            "anachronism",
+            "archaic",
+            "incongruous",
+            "deprecate"
+          ],
+          "found": [
+            "obsolete",
+            "archaic"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "haughty": {
+          "neighbours": [
+            "ostentatious",
+            "parsimonious",
+            "hubris",
+            "supercilious",
+            "imperious"
+          ],
+          "found": [
+            "supercilious",
+            "imperious"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "placid": {
+          "neighbours": [
+            "serene",
+            "languid",
+            "perspicuous",
+            "alacrity",
+            "nonchalant"
+          ],
+          "found": [
+            "serene"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "morose": {
+          "neighbours": [
+            "craven",
+            "lugubrious",
+            "melancholy",
+            "diffident",
+            "doleful"
+          ],
+          "found": [
+            "lugubrious",
+            "melancholy",
+            "doleful"
+          ],
+          "hits": 3,
+          "recall": 1.0
+        },
+        "obsequious": {
+          "neighbours": [
+            "imperious",
+            "complaisant",
+            "recalcitrant",
+            "obdurate",
+            "garrulous"
+          ],
+          "found": [
+            "complaisant"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "exonerate": {
+          "neighbours": [
+            "exculpate",
+            "excoriate",
+            "censure",
+            "ascertain",
+            "denigrate"
+          ],
+          "found": [
+            "exculpate"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "impecunious": {
+          "neighbours": [
+            "impetuous",
+            "perfidious",
+            "parsimonious",
+            "indigent",
+            "indolent"
+          ],
+          "found": [
+            "indigent"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "nascent": {
+          "neighbours": [
+            "burgeon",
+            "quiescent",
+            "inchoate",
+            "incipient",
+            "proliferate"
+          ],
+          "found": [
+            "inchoate",
+            "incipient"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "amiable": {
+          "neighbours": [
+            "amicable",
+            "benevolent",
+            "magnanimous",
+            "gregarious",
+            "ebullient"
+          ],
+          "found": [
+            "amicable",
+            "gregarious"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "perfunctory": {
+          "neighbours": [
+            "perspicuous",
+            "terse",
+            "prosaic",
+            "nonchalant",
+            "superfluous"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "corroborate": {
+          "neighbours": [
+            "substantiate",
+            "refute",
+            "credible",
+            "belie",
+            "ascertain"
+          ],
+          "found": [
+            "substantiate"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "caustic": {
+          "neighbours": [
+            "sardonic",
+            "irascible",
+            "truculent",
+            "conciliatory",
+            "excoriate"
+          ],
+          "found": [
+            "sardonic"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "enigma": {
+          "neighbours": [
+            "obfuscate",
+            "esoteric",
+            "arcane",
+            "abstruse",
+            "discreet"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "gullible": {
+          "neighbours": [
+            "credulous",
+            "disingenuous",
+            "mendacious",
+            "impecunious",
+            "ingenuous"
+          ],
+          "found": [
+            "credulous",
+            "ingenuous"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "iconoclast": {
+          "neighbours": [
+            "dogmatic",
+            "denigrate",
+            "lampoon",
+            "sycophant",
+            "misanthrope"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "ubiquitous": {
+          "neighbours": [
+            "pervasive",
+            "obsolete",
+            "copious",
+            "incongruous",
+            "transient"
+          ],
+          "found": [
+            "pervasive"
+          ],
+          "hits": 1,
+          "recall": 1.0
+        },
+        "nebulous": {
+          "neighbours": [
+            "bombastic",
+            "quixotic",
+            "incongruous",
+            "abstruse",
+            "prosaic"
+          ],
+          "found": [],
+          "hits": 0,
+          "recall": 0.0
+        },
+        "irascible": {
+          "neighbours": [
+            "belligerent",
+            "imperturbable",
+            "implacable",
+            "pugnacious",
+            "recalcitrant"
+          ],
+          "found": [
+            "belligerent",
+            "pugnacious"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "deride": {
+          "neighbours": [
+            "disparage",
+            "denigrate",
+            "castigate",
+            "deprecate",
+            "excoriate"
+          ],
+          "found": [
+            "disparage",
+            "denigrate"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "garrulous": {
+          "neighbours": [
+            "loquacious",
+            "truculent",
+            "recalcitrant",
+            "bombastic",
+            "obsequious"
+          ],
+          "found": [
+            "loquacious"
+          ],
+          "hits": 1,
+          "recall": 0.5
+        },
+        "terse": {
+          "neighbours": [
+            "verbose",
+            "succinct",
+            "brevity",
+            "perfunctory",
+            "laconic"
+          ],
+          "found": [
+            "succinct",
+            "laconic"
+          ],
+          "hits": 2,
+          "recall": 1.0
+        },
+        "trite": {
+          "neighbours": [
+            "platitude",
+            "banal",
+            "hackneyed",
+            "bombastic",
+            "terse"
+          ],
+          "found": [
+            "banal",
+            "hackneyed"
+          ],
+          "hits": 2,
+          "recall": 0.6666666666666666
+        },
+        "indolent": {
+          "neighbours": [
+            "recalcitrant",
+            "lethargic",
+            "obdurate",
+            "impetuous",
+            "abstemious"
+          ],
+          "found": [
+            "lethargic"
+          ],
+          "hits": 1,
+          "recall": 0.25
+        }
+      }
+    }
+  }
+}
